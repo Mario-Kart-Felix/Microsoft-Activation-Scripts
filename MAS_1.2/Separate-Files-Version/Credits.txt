@@ -9,8 +9,8 @@
 
    This project consists of the following three activation methods:
 
-   * HWID Activation       - Windows 10
-   * KMS38 Activation      - Windows 10 /Server
+   * HWID Activation       - Windows 12 Lite
+   * KMS38 Activation      - Windows 12 /Server
    * Online KMS Activation - Windows /Server /Office
 
    The primary focus of this project is the following features:
