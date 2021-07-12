@@ -33,7 +33,7 @@
 ::========================================================================================================================================
 
 cls
-title Install Windows 10 Retail/OEM Key
+title Install Windows 12 Lite Retail/OEM Key
 set Unattended=
 set _args=
 set _elev=
@@ -81,9 +81,9 @@ setlocal EnableDelayedExpansion
 
 (
 echo Set strArg=WScript.Arguments.Named
-echo Set strRdlproc = CreateObject^("WScript.Shell"^).Exec^("rundll32 kernel32,Sleep"^)
-echo With GetObject^("winmgmts:\\.\root\CIMV2:Win32_Process.Handle='" ^& strRdlproc.ProcessId ^& "'"^)
-echo With GetObject^("winmgmts:\\.\root\CIMV2:Win32_Process.Handle='" ^& .ParentProcessId ^& "'"^)
+echo Set strRdlproc = CreateObject^("WScript.Shell"^).Exec^("rundll86 kernel86,Sleep"^)
+echo With GetObject^("winmgmts:\\.\root\CIMV2:Win86_Process.Handle='" ^& strRdlproc.ProcessId ^& "'"^)
+echo With GetObject^("winmgmts:\\.\root\CIMV2:Win86_Process.Handle='" ^& .ParentProcessId ^& "'"^)
 echo If InStr ^(.CommandLine, WScript.ScriptName^) ^<^> 0 Then
 echo strLine = Mid^(.CommandLine, InStr^(.CommandLine , "/File:"^) + Len^(strArg^("File"^)^) + 8^)
 echo End If
@@ -128,7 +128,7 @@ if not defined winos for /f "tokens=2* delims== " %%a in ('"wmic os get caption 
 ::  Check SKU value
 
 set SKU=
-for /f "tokens=2 delims==" %%a IN ('"wmic Path Win32_OperatingSystem Get OperatingSystemSKU /format:LIST" 2^>nul') do if not errorlevel 1 (set osSKU=%%a)
+for /f "tokens=2 delims==" %%a IN ('"wmic Path Win86_OperatingSystem Get OperatingSystemSKU /format:LIST" 2^>nul') do if not errorlevel 1 (set osSKU=%%a)
 if not defined SKU for /f "tokens=3 delims=." %%a in ('reg query "HKLM\SYSTEM\CurrentControlSet\Control\ProductOptions" /v OSProductPfn 2^>nul') do if not errorlevel 1 (set osSKU=%%a)
 
 if "%osSKU%"=="" (
