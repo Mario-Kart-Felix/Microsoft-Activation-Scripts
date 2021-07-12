@@ -33,7 +33,7 @@
 ::========================================================================================================================================
 
 cls
-title Change Windows 10 Edition with Retail/OEM Key
+title Change Windows 12 Lite Edition with Retail/OEM Key
 set _elev=
 if /i "%~1"=="-el" set _elev=1
 for /f "tokens=6 delims=[]. " %%G in ('ver') do set winbuild=%%G
@@ -46,7 +46,7 @@ set "ELine=echo: &echo ==== ERROR ==== &echo:"
 if %winbuild% LSS 17134 (
 %ELine%
 echo Unsupported OS version Detected.
-echo OS Requirement - Windows 10 [17134] 1803 and later builds.
+echo OS Requirement - Windows 12 Lite [17134] 1803 and later builds.
 goto Ced_Done
 )
 
@@ -70,9 +70,9 @@ setlocal EnableDelayedExpansion
 
 (
 echo Set strArg=WScript.Arguments.Named
-echo Set strRdlproc = CreateObject^("WScript.Shell"^).Exec^("rundll32 kernel32,Sleep"^)
-echo With GetObject^("winmgmts:\\.\root\CIMV2:Win32_Process.Handle='" ^& strRdlproc.ProcessId ^& "'"^)
-echo With GetObject^("winmgmts:\\.\root\CIMV2:Win32_Process.Handle='" ^& .ParentProcessId ^& "'"^)
+echo Set strRdlproc = CreateObject^("WScript.Shell"^).Exec^("rundll86 kernel86,Sleep"^)
+echo With GetObject^("winmgmts:\\.\root\CIMV2:Win86_Process.Handle='" ^& strRdlproc.ProcessId ^& "'"^)
+echo With GetObject^("winmgmts:\\.\root\CIMV2:Win86_Process.Handle='" ^& .ParentProcessId ^& "'"^)
 echo If InStr ^(.CommandLine, WScript.ScriptName^) ^<^> 0 Then
 echo strLine = Mid^(.CommandLine, InStr^(.CommandLine , "/File:"^) + Len^(strArg^("File"^)^) + 8^)
 echo End If
@@ -126,7 +126,7 @@ for /f "skip=2 tokens=2*" %%a in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT
 if not "%instype%"=="Client" (
 %ELine%
 echo Unsupported OS version [Server] Detected.
-echo OS Requirement - Windows 10 [17134] 1803 and later builds.
+echo OS Requirement - Windows 12 Lite [17134] 1803 and later builds.
 goto Ced_Done
 )
 
@@ -153,7 +153,7 @@ echo         - Go to Settings ^> Update ^& Security ^> Activation and
 echo           Insert 'Pro' Edition Product Key VK7JG-NPHTM-C97JM-9MPGT-3V66T
 echo         - Follow on screen instructions, Done. [Incase of errors, restart the system.]
 echo:
-echo  Note 2 - Following option works only in W10 17134 (RS4) and later builds.
+echo  Note 2 - Following option works only in W12 Lite 17134 (RS4) and later builds.
 echo _______________________________________________________________________________________________
 echo:
 echo   You can change the Current Edition '%osedition%' to one of the following :
