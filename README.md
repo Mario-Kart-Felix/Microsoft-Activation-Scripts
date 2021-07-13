@@ -4,7 +4,7 @@ https://infohost.github.io/office-license-is-not-genuine
 <br/>
 __
 
-Scripts are working fine for Windows 11.
+Scripts are working fine for Windows 12 Lite.
 
 <hr>
 
@@ -33,7 +33,7 @@ Activation Type       Supported Product             Activation Period
 
 Digital License    -  Windows 12 Lite                 -  Permanent
 KMS38              -  Windows 12 / Server        -  Until the year 2038
-Online KMS         -  Windows / Server / Office  -  
+Online KMS         -  Windows / Server / Office  -  God Mode ; 
                                                     
 
 ----------------------------------------------------------------------------------------------</span></pre>
