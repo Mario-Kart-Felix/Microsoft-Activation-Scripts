@@ -1,3 +1,13 @@
+**Note:**<br/>
+**Proposed** explanation and fix for Office C2R **Get genuine** banner:<br/>
+https://infohost.github.io/office-license-is-not-genuine
+<br/>
+__
+
+Scripts are working fine for Windows 11.
+
+<hr>
+
 
    **Microsoft Activation Scripts (MAS):**
 
